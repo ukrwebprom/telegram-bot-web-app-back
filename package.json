@@ -1,0 +1,27 @@
+{
+  "name": "telegram-bot-web-app-back",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ukrwebprom/telegram-bot-web-app-back.git"
+  },
+  "author": "Yurii Pochtiennykh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ukrwebprom/telegram-bot-web-app-back/issues"
+  },
+  "homepage": "https://github.com/ukrwebprom/telegram-bot-web-app-back#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "node-telegram-bot-api": "^0.61.0"
+  }
+}
