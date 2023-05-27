@@ -5,11 +5,7 @@ const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
 
 const TelegramBot = require('node-telegram-bot-api');
-const bot = new TelegramBot(BOT_TOKEN, {polling: false});
-bot.stopPolling({
-  cancel: true,
-  reason: 'Lost leader status'
-})
+const bot = new TelegramBot(BOT_TOKEN, {polling: true});
 
 // Listen for any kind of message. There are different kinds of
 // messages.
