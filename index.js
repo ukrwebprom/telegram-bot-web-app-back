@@ -1,20 +1,16 @@
-/* require('dotenv').config(); */
-/* const {BOT_TOKEN} = process.env; */
+require('dotenv').config();
+
 const PAGE_URL = 'https://pochtiennykh-bot.onrender.com';
 const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
-const BOT_TOKEN = '5922844262:AAE8ccKow2oWF30WJFt5QB0pNn7Dr8itjxE';
-import { Telegraf } from 'telegraf';
-import { message } from 'telegraf/filters';
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
-bot.command(('cv'), async (ctx) => {
-  await ctx.reply('Here it is');
-  await ctx.replyWithDocument({ source: './files/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf' });
+const TeleBot = require('telebot');
+const bot = new TeleBot(process.env.BOT_TOKEN);
 
-});
+bot.on('text', (msg) => msg.reply.text(msg.text));
+ 
+bot.start();
 
-bot.launch();
 /* bot.on('message', (msg) => {
   const chatId = msg.chat.id;
     console.log(msg);
