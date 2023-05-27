@@ -9,7 +9,7 @@ const bot = new TelegramBot(BOT_TOKEN, {polling: true});
 
 // Listen for any kind of message. There are different kinds of
 // messages.
-bot.on('message', (msg) => {
+/* bot.on('message', (msg) => {
   const chatId = msg.chat.id;
     console.log(msg);
     switch(msg.text.toLowerCase()) {
@@ -59,7 +59,7 @@ bot.on('message', (msg) => {
       default:
         bot.sendMessage(chatId, 'Hmmm...');
     }
-  // send a message to the chat acknowledging receipt of their message
+
   
 
-});
+}); */
