@@ -8,6 +8,8 @@ const TeleBot = require('telebot');
 const bot = new TeleBot(process.env.BOT_TOKEN);
 
 bot.on('text', (msg) => msg.reply.text(msg.text));
+bot.on(['/start', '/hello'], (msg) => msg.reply.text('Hi. Nice to meet you 🤝'));
+bot.on('/cv', (msg) => msg.reply.text('Here it is'));
  
 setTimeout(() => bot.start(), 5000);
 
