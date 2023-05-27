@@ -5,13 +5,17 @@ const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
 
 const TeleBot = require('telebot');
-const bot = new TeleBot(process.env.BOT_TOKEN);
+const bot = new TeleBot({
+  token:process.env.BOT_TOKEN,
+  polling: { 
+    interval: 1000, 
+    timeout: 0}
+});
 
 bot.on('text', (msg) => msg.reply.text(msg.text));
 bot.on(['/start', '/hello'], (msg) => msg.reply.text('Hi. Nice to meet you 🤝'));
 bot.on('/cv', (msg) => msg.reply.text('Here it is'));
- 
-setTimeout(() => bot.start(), 5000);
+bot.start();
 
 /* bot.on('message', (msg) => {
   const chatId = msg.chat.id;
