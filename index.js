@@ -1,11 +1,15 @@
-/* require('dotenv').config(); */
+require('dotenv').config();
 const {BOT_TOKEN} = process.env;
 const PAGE_URL = 'https://pochtiennykh-bot.onrender.com';
 const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
 
 const TelegramBot = require('node-telegram-bot-api');
-const bot = new TelegramBot(BOT_TOKEN, {polling: true});
+const bot = new TelegramBot(BOT_TOKEN, {polling: false});
+bot.stopPolling({
+  cancel: true,
+  reason: 'Lost leader status'
+})
 
 // Listen for any kind of message. There are different kinds of
 // messages.
