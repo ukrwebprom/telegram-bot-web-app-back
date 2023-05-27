@@ -1,4 +1,4 @@
-require('dotenv').config();
+/* require('dotenv').config(); */
 const {BOT_TOKEN} = process.env;
 const PAGE_URL = 'https://pochtiennykh-bot.onrender.com';
 const BEHANCE = 'https://www.behance.net/ukrwebprom';
