@@ -9,8 +9,7 @@ const bot = new TeleBot(process.env.BOT_TOKEN);
 
 bot.on('text', (msg) => msg.reply.text(msg.text));
  
-bot.start();
-console.log('started');
+setTimeout(() => bot.start(), 5000);
 
 /* bot.on('message', (msg) => {
   const chatId = msg.chat.id;
