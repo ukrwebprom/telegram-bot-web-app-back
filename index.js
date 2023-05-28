@@ -25,8 +25,8 @@ const TeleBot = require('telebot');
 const bot = new TeleBot({
   token:BOT_TOKEN,
   webhook: {
-    url:'/webhook',
-    host:'https://telebot-pochtiennykh.herokuapp.com',
+    url:'https://telebot-pochtiennykh.herokuapp.com/webhook',
+    host:'0.0.0.0',
     port:PORT
   }
 });
