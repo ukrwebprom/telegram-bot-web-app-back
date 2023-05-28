@@ -18,6 +18,10 @@ bot.on('text', (msg) => {
     case '/start':
       msg.reply.text('Hi. Nice to meet you 🤝');
       break;
+    case '/cv':
+      msg.reply.text('Here it is');
+      msg.sendDocument('./files/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf');
+      break;
     case 'я тебя люблю':
       msg.reply.text('Я тебя тоже ❤️');
       break;
