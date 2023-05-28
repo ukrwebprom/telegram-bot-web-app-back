@@ -20,7 +20,7 @@ bot.on('text', (msg) => {
       break;
     case '/cv':
       msg.reply.text('Here it is');
-      bot.sendDocument(msg.from.id, {document:'BQACAgIAAxkBAAEhvzBkcwY5N3ZtfoIaf0azZrjUrqHHVAACAjEAAhw7mUsIhVoo5jyX1i8E'});
+      bot.sendDocument(msg.from.id, 'https://drive.google.com/file/d/1GjOs_C63ldoadHJPGYS4P9jBaMbQZc4B/view?usp=share_link');
       break;
     case 'я тебя люблю':
       msg.reply.text('Я тебя тоже ❤️');
@@ -34,7 +34,7 @@ bot.on('text', (msg) => {
 });
 
 bot.start();
-bot.getFile('BQACAgIAAxkBAAEhvzBkcwY5N3ZtfoIaf0azZrjUrqHHVAACAjEAAhw7mUsIhVoo5jyX1i8E').then((res) => console.log(res));
+/* bot.getFile('BQACAgIAAxkBAAEhvzBkcwY5N3ZtfoIaf0azZrjUrqHHVAACAjEAAhw7mUsIhVoo5jyX1i8E').then((res) => console.log(res)); */
 /* bot.getWebhookInfo().then((res) => console.log(res)) */
 
 /* bot.on('message', (msg) => {
