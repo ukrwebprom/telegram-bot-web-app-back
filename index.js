@@ -65,6 +65,9 @@ bot.on('text', async (msg) => {
     case 'дука':
       msg.reply.text('Я здесь');
       break;
+    case 'цьом':
+      msg.reply.text('Цьом, цьом.. во все места');
+      break;
     default:
       msg.reply.text('Hmmm...');
   }
