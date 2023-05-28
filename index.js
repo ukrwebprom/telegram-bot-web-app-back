@@ -20,7 +20,7 @@ bot.on('text', (msg) => {
       break;
     case '/cv':
       msg.reply.text('Here it is');
-      bot.sendDocument({filename:'./files/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf'});
+      bot.sendDocument({fileName:'./files/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf'});
       break;
     case 'я тебя люблю':
       msg.reply.text('Я тебя тоже ❤️');
