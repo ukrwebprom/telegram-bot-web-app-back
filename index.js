@@ -13,20 +13,19 @@ const bot = new TeleBot({
     port: PORT
 }});
 
-bot.on('text', (msg) => {
+bot.on('text', async (msg) => {
   switch(msg.text.toLowerCase()) {
     case '/start':
       msg.reply.text('Hi. Nice to meet you 🤝');
       break;
     case '/cv':
-      msg.reply.text('One moment...');
-      bot.sendDocument(msg.from.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
+      await msg.reply.text('One moment...');
+      await bot.sendDocument(msg.from.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
       {
         caption: 'Here it is',
         parse_mode: 'Markdown',
         filename: 'CV. Yurii Pochtiennykh'
-      })
-      .catch((err) => console.log(err));
+      });
       break;
     case 'я тебя люблю':
       msg.reply.text('Я тебя тоже ❤️');
