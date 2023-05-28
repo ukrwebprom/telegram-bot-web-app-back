@@ -13,9 +13,22 @@ const bot = new TeleBot({
     port: PORT
 }});
 
-bot.on('text', (msg) => msg.reply.text(msg.text));
-bot.on(['/start', '/hello'], (msg) => msg.reply.text('Hi. Nice to meet you 🤝'));
-bot.on('/cv', (msg) => msg.reply.text('Here it is'));
+bot.on('text', (msg) => {
+  switch(msg.text.toLowerCase()) {
+    case '/start':
+      msg.reply.text(chatId, 'Hi. Nice to meet you 🤝');
+      break;
+    case 'я тебя люблю':
+      msg.reply.text(chatId, 'Я тебя тоже ❤️');
+      break;
+    case 'дука':
+      msg.reply.text(chatId, 'Я здесь');
+      break;
+    default:
+      msg.reply.text(chatId, 'Hmmm...');
+  }
+});
+
 bot.start();
 bot.getWebhookInfo().then((res) => console.log(res))
 
