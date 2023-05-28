@@ -18,6 +18,15 @@ bot.on('text', async (msg) => {
     case '/start':
       msg.reply.text('Hi. Nice to meet you 🤝');
       break;
+    case '/about':
+      bot.sendMessage(msg.chat.id, 'sure..',{
+        replyMarkup: {
+          inline_keyboard: [
+            [{text: 'Open about page', web_app: {url:PAGE_URL}}]
+          ]
+        }
+      });
+      break;
     case '/cv':
       await msg.reply.text('One moment...');
       await bot.sendDocument(msg.chat.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
