@@ -21,7 +21,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/webhook', (req, res) => {
-  const upd = req.body;
+  const upd = req.body.message;
   const chat_id = upd.chat.id;
   const message = upd.text;
   bot.receiveUpdates(req.body);
