@@ -13,7 +13,7 @@ const app = express();
 app.use(express.json());
 
 app.post('/webhook', (req, res) => {
-  bot.receiveUpdates(req.body);
+  bot.handleUpdate(req.body);
   res.sendStatus(200);
 });
 
