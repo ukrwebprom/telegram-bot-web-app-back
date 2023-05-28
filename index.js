@@ -28,8 +28,7 @@ bot.on('text', async (msg) => {
       });
       break;
     case '/phone':
-      msg.reply.contact('+380963336533');
-      await bot.sendContact(msg.chat.id, '+380963336533', 'Yurii', {lastname:'Pochtiennykh'});
+      await bot.sendContact(msg.chat.id, '+380963336533', 'Yurii', {last_name:'Pochtiennykh'});
       break;
     case '/portfolio':
       await bot.sendMessage(msg.chat.id, 'Here is my design works. The portfolio shows works made at different times and from different areas - print design, games, web, 3D...',
