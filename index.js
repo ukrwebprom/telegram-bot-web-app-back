@@ -7,13 +7,15 @@ const WEBHOOK = 'https://telebot-pochtiennykh.herokuapp.com/';
 const {BOT_TOKEN, PORT} = process.env;
 console.log("port:", PORT);
 const TeleBot = require('telebot');
-const bot = new TeleBot({
+const bot = new TeleBot(BOT_TOKEN);
+bot.setWebhook(WEBHOOK);
+/* const bot = new TeleBot({
   token:BOT_TOKEN,
   webhook: { 
     url: WEBHOOK,
     host: '0.0.0.0',
     port: PORT
-}});
+}}); */
 
 bot.on('text', async (msg) => {
   console.log('Got msg:', msg.text);
