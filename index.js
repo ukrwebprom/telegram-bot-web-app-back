@@ -5,9 +5,10 @@ const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
 const WEBHOOK = 'https://telebot-pochtiennykh.herokuapp.com/webhook';
 const {BOT_TOKEN, PORT} = process.env;
-console.log("port:", PORT);
+
 const TeleBot = require('telebot');
 const bot = new TeleBot(BOT_TOKEN);
+
 const app = express();
 app.use(express.json());
 
@@ -19,9 +20,8 @@ app.post('/webhook', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Webhook server is running on port ${PORT}`);
 });
-bot.setWebhook({
-  url: WEBHOOK
-});
+bot.setWebhook(WEBHOOK);
+
 bot.on('text', async (msg) => {
   console.log('Got msg:', msg.text);
   switch(msg.text.toLowerCase()) {
