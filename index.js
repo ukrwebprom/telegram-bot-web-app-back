@@ -16,16 +16,16 @@ const bot = new TeleBot({
 bot.on('text', (msg) => {
   switch(msg.text.toLowerCase()) {
     case '/start':
-      msg.reply.text(chatId, 'Hi. Nice to meet you 🤝');
+      msg.reply.text('Hi. Nice to meet you 🤝');
       break;
     case 'я тебя люблю':
-      msg.reply.text(chatId, 'Я тебя тоже ❤️');
+      msg.reply.text('Я тебя тоже ❤️');
       break;
     case 'дука':
-      msg.reply.text(chatId, 'Я здесь');
+      msg.reply.text('Я здесь');
       break;
     default:
-      msg.reply.text(chatId, 'Hmmm...');
+      msg.reply.text('Hmmm...');
   }
 });
 
