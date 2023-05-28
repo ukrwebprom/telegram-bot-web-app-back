@@ -19,7 +19,7 @@ bot.on('text', async (msg) => {
       msg.reply.text('Hi. Nice to meet you 🤝');
       break;
     case '/about':
-      bot.sendMessage(msg.chat.id, 'sure..',{
+      bot.sendMessage(msg.chat.id, 'Here is my personal page. Thank you for watching.',{
         replyMarkup: {
           inline_keyboard: [
             [{text: 'Open about page', web_app: {url:PAGE_URL}}]
