@@ -3,7 +3,7 @@
 const PAGE_URL = 'https://pochtiennykh-bot.onrender.com';
 const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
-const WEBHOOK = 'https://telebot-bfkj.onrender.com';
+const WEBHOOK = 'https://telebot-pochtiennykh.herokuapp.com/';
 const {BOT_TOKEN, PORT} = process.env;
 const TeleBot = require('telebot');
 const bot = new TeleBot({
