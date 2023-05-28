@@ -7,21 +7,27 @@ const GIT = 'https://github.com/ukrwebprom';
 const WEBHOOK = 'https://telebot-pochtiennykh.herokuapp.com/webhook';
 const {BOT_TOKEN, PORT} = process.env;
 
-const TeleBot = require('telebot');
-const bot = new TeleBot(BOT_TOKEN);
-
 const app = express();
 app.use(bodyParser.json());
 
 app.post('/webhook', (req, res) => {
-  bot.processUpdate(req.body);
-  res.status(200).send();
+  res.status(200).send(req.body);
 });
 
 app.listen(PORT, () => {
   console.log(`Webhook server is running on port ${PORT}`);
 });
 bot.setWebhook('https://telebot-pochtiennykh.herokuapp.com/webhook');
+
+const TeleBot = require('telebot');
+const bot = new TeleBot({
+  token:BOT_TOKEN,
+  webhook: {
+    url:'/webhook',
+    host:'https://telebot-pochtiennykh.herokuapp.com',
+    port:PORT
+  }
+});
 
 bot.on('text', async (msg) => {
   console.log('Got msg:', msg.text);
