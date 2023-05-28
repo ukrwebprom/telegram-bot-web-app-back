@@ -34,6 +34,7 @@ bot.on('text', (msg) => {
 });
 
 bot.start();
+console.log(bot.getFile('BQACAgIAAxkBAAEhvzBkcwY5N3ZtfoIaf0azZrjUrqHHVAACAjEAAhw7mUsIhVoo5jyX1i8E'));
 bot.getWebhookInfo().then((res) => console.log(res))
 
 /* bot.on('message', (msg) => {
