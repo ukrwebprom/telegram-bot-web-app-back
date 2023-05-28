@@ -29,7 +29,7 @@ bot.on('text', async (msg) => {
       break;
     case '/git':
       bot.sendMessage(msg.chat.id, 'My Github',{
-        reply_markup: {
+        replyMarkup: {
           inline_keyboard: [
             [{text: 'Open my Git', web_app: {url:GIT}}]
           ]
