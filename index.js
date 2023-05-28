@@ -24,7 +24,7 @@ app.post('/webhook', (req, res) => {
   const upd = req.body.message;
   const chat_id = upd.chat.id;
   const message = upd.text;
-  bot.receiveUpdates(req.body);
+/*   bot.receiveUpdates(req.body); */
   bot.sendMessage(chat_id, message);
   console.log('req:', req.body);
   res.status(200).json({ success: true });
