@@ -36,7 +36,7 @@ bot.on('text', async (msg) => {
         filename: 'CV. Yurii Pochtiennykh'
       });
       break;
-    case '/phone':
+    case '/contact':
       await bot.sendContact(msg.chat.id, '+380963336533', 'Yurii', {last_name:'Pochtiennykh'});
       break;
     case '/portfolio':
