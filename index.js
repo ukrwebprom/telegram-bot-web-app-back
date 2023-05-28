@@ -20,7 +20,7 @@ app.post('/webhook', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Webhook server is running on port ${PORT}`);
 });
-bot.setWebhook({url:'https://telebot-pochtiennykh.herokuapp.com/webhook'});
+bot.setWebhook('https://telebot-pochtiennykh.herokuapp.com/webhook');
 
 bot.on('text', async (msg) => {
   console.log('Got msg:', msg.text);
