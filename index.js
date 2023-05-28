@@ -5,6 +5,7 @@ const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
 const WEBHOOK = 'https://telebot-pochtiennykh.herokuapp.com/';
 const {BOT_TOKEN, PORT} = process.env;
+console.log("port:", PORT);
 const TeleBot = require('telebot');
 const bot = new TeleBot({
   token:BOT_TOKEN,
