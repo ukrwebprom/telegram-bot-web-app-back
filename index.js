@@ -14,7 +14,7 @@ app.use(express.json());
 
 app.post('/webhook', (req, res) => {
   bot.receiveUpdates(req.body);
-  res.sendStatus(200);
+  res.status(200).send();
 });
 
 app.listen(PORT, () => {
