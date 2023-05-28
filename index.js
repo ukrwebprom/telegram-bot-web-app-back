@@ -7,20 +7,6 @@ const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
 const WEBHOOK = 'https://telebot-pochtiennykh.herokuapp.com/webhook';
 const {BOT_TOKEN, PORT} = process.env;
-
-const app = express();
-app.use(cors());
-app.use(bodyParser.json());
-
-app.post('/webhook', (req, res) => {
-  console.log('req:', req.body);
-  res.status(200).json({ success: true });
-});
-
-app.listen(PORT, () => {
-  console.log(`Webhook server is running on port ${PORT}`);
-});
-
 const TeleBot = require('telebot');
 const bot = new TeleBot({
   token:BOT_TOKEN,
@@ -30,6 +16,21 @@ const bot = new TeleBot({
     port:PORT
   }
 });
+const app = express();
+app.use(cors());
+app.use(bodyParser.json());
+
+app.post('/webhook', (req, res) => {
+  bot.receiveUpdates(req.body);
+  console.log('req:', req.body);
+  res.status(200).json({ success: true });
+});
+
+app.listen(PORT, () => {
+  console.log(`Webhook server is running on port ${PORT}`);
+});
+
+
 bot.getWebhookInfo().then((res) => console.log("webhook info:", res));
 bot.on('text', async (msg) => {
   console.log('Got msg:', msg.text);
