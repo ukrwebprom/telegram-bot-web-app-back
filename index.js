@@ -24,7 +24,7 @@ bot.on('text', async (msg) => {
       {
         caption: 'Here it is',
         parse_mode: 'Markdown',
-        filename: 'CV. Yurii Pochtiennykh'
+        reply_to_message_id: msg.message_id
       });
       break;
     case 'я тебя люблю':
