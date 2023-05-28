@@ -8,7 +8,7 @@ const TeleBot = require('telebot');
 const bot = new TeleBot({
   token:BOT_TOKEN,
   webhook: { 
-    url: 'https://localhost',
+    url: 'https://telebot-bfkj.onrender.com',
     host: '0.0.0.0',
     port: PORT
 }});
