@@ -20,7 +20,7 @@ bot.on('text', (msg) => {
       break;
     case '/cv':
       msg.reply.text('Here it is');
-      bot.sendDocument(msg.from.id, 'https://drive.google.com/file/d/1GjOs_C63ldoadHJPGYS4P9jBaMbQZc4B/view?usp=share_link');
+      bot.sendDocument(msg.from.id, {document:'https://drive.google.com/file/d/1GjOs_C63ldoadHJPGYS4P9jBaMbQZc4B/view?usp=share_link'}).catch((err) => console.log(err));
       break;
     case 'я тебя люблю':
       msg.reply.text('Я тебя тоже ❤️');
