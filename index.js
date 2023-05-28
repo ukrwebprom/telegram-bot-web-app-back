@@ -23,11 +23,12 @@ bot.on('text', async (msg) => {
       await bot.sendDocument(msg.chat.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
       {
         caption: 'Here it is',
-        parseMode: 'Markdown'
+        parseMode: 'Markdown',
+        filename: 'CV. Yurii Pochtiennykh'
       });
       break;
     case '/phone':
-      await bot.sendContact(msg.chat.id, '+380963336533', 'Yurii', {lastName:'Pochtiennykh'});
+      await bot.sendContact(msg.chat.id, '+380963336533', 'Yurii', {lastname:'Pochtiennykh'});
       break;
     case '/portfolio':
       await bot.sendMessage(msg.chat.id, 'Here is my design works. The portfolio shows works made at different times and from different areas - print design, games, web, 3D...',
