@@ -1,20 +1,27 @@
 /* require('dotenv').config(); */
-
+const express = require('express');
 const PAGE_URL = 'https://pochtiennykh-bot.onrender.com';
 const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
-const WEBHOOK = 'https://telebot-pochtiennykh.herokuapp.com/';
+const WEBHOOK = 'https://telebot-pochtiennykh.herokuapp.com/webhook';
 const {BOT_TOKEN, PORT} = process.env;
 console.log("port:", PORT);
 const TeleBot = require('telebot');
-const bot = new TeleBot({
-  token:BOT_TOKEN,
-  webhook: { 
-    url: WEBHOOK,
-    host: '0.0.0.0',
-    port: PORT
-}});
+const bot = new TeleBot(BOT_TOKEN);
+const app = express();
+app.use(express.json());
 
+app.post('/webhook', (req, res) => {
+  bot.processUpdate(req.body);
+  res.sendStatus(200);
+});
+
+app.listen(PORT, () => {
+  console.log(`Webhook server is running on port ${PORT}`);
+});
+bot.setWebHook({
+  url: WEBHOOK
+});
 bot.on('text', async (msg) => {
   console.log('Got msg:', msg.text);
   switch(msg.text.toLowerCase()) {
@@ -75,6 +82,6 @@ bot.on('text', async (msg) => {
   }
 });
 
-bot.start();
+/* bot.start(); */
 
 bot.getWebhookInfo().then((res) => console.log(res));
