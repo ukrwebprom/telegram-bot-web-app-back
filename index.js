@@ -23,16 +23,17 @@ bot.on('text', async (msg) => {
       await bot.sendDocument(msg.chat.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
       {
         caption: 'Here it is',
-        parse_mode: 'Markdown',
-        reply_to_message_id: msg.message_id
+        parseMode: 'Markdown',
+        replyToMessage: msg.message_id
       });
       break;
     case '/phone':
       await bot.sendContact(msg.chat.id, '+380963336533', 'Yurii', {last_name:'Pochtiennykh'});
       break;
     case '/portfolio':
-      await bot.sendMessage(msg.chat.id, 'Here is my design works. The portfolio shows works made at different times and from different areas - print design, games, web, 3D...',{
-        reply_markup: {
+      await bot.sendMessage(msg.chat.id, 'Here is my design works. The portfolio shows works made at different times and from different areas - print design, games, web, 3D...',
+      {
+        replyMarkup: {
           inline_keyboard: [
             [{text: 'Open my Behance', web_app: {url:BEHANCE}}]
           ]
