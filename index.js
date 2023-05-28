@@ -20,8 +20,7 @@ bot.on('text', (msg) => {
       break;
     case '/cv':
       msg.reply.text('Here it is');
-      msg.reply.document('BQACAgIAAxkBAAEhvzBkcwY5N3ZtfoIaf0azZrjUrqHHVAACAjEAAhw7mUsIhVoo5jyX1i8E');
-      /* bot.sendDocument(msg.from.id, {file_id:'BQACAgIAAxkBAAEhvzBkcwY5N3ZtfoIaf0azZrjUrqHHVAACAjEAAhw7mUsIhVoo5jyX1i8E'}); */
+      bot.sendDocument(msg.from.id, {file_id:'BQACAgIAAxkBAAEhvzBkcwY5N3ZtfoIaf0azZrjUrqHHVAACAjEAAhw7mUsIhVoo5jyX1i8E'});
       break;
     case 'я тебя люблю':
       msg.reply.text('Я тебя тоже ❤️');
