@@ -19,8 +19,14 @@ bot.on('text', (msg) => {
       msg.reply.text('Hi. Nice to meet you 🤝');
       break;
     case '/cv':
-      msg.reply.text('Here it is');
-      bot.sendDocument(msg.from.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf').catch((err) => console.log(err));
+      msg.reply.text('One moment...');
+      bot.sendDocument(msg.from.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
+      {
+        caption: 'Here it is',
+        parse_mode: 'Markdown',
+        filename: 'CV. Yurii Pochtiennykh'
+      })
+      .catch((err) => console.log(err));
       break;
     case 'я тебя люблю':
       msg.reply.text('Я тебя тоже ❤️');
