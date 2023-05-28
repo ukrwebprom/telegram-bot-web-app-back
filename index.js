@@ -1,5 +1,6 @@
 /* require('dotenv').config(); */
 const express = require('express');
+const bodyParser = require('body-parser');
 const PAGE_URL = 'https://pochtiennykh-bot.onrender.com';
 const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
@@ -10,7 +11,7 @@ const TeleBot = require('telebot');
 const bot = new TeleBot(BOT_TOKEN);
 
 const app = express();
-app.use(express.json());
+app.use(bodyParser.json());
 
 app.post('/webhook', (req, res) => {
   bot.receiveUpdates(req.body);
