@@ -20,12 +20,15 @@ bot.on('text', async (msg) => {
       break;
     case '/cv':
       await msg.reply.text('One moment...');
-      await bot.sendDocument(msg.from.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
+      await bot.sendDocument(msg.chat.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
       {
         caption: 'Here it is',
         parse_mode: 'Markdown',
         reply_to_message_id: msg.message_id
       });
+      break;
+    case '/phone':
+      bot.sendContact(msg.chat.id, '+380963336533', 'Yurii', {last_name:'Pochtiennykh'});
       break;
     case 'я тебя люблю':
       msg.reply.text('Я тебя тоже ❤️');
