@@ -27,6 +27,15 @@ bot.on('text', async (msg) => {
         }
       });
       break;
+    case '/git':
+      bot.sendMessage(msg.chat.id, 'My Github',{
+        reply_markup: {
+          inline_keyboard: [
+            [{text: 'Open my Git', web_app: {url:GIT}}]
+          ]
+        }
+      });
+      break;
     case '/cv':
       await msg.reply.text('One moment...');
       await bot.sendDocument(msg.chat.id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
