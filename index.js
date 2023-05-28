@@ -17,7 +17,6 @@ app.post('/webhook', (req, res) => {
 app.listen(PORT, () => {
   console.log(`Webhook server is running on port ${PORT}`);
 });
-bot.setWebhook('https://telebot-pochtiennykh.herokuapp.com/webhook');
 
 const TeleBot = require('telebot');
 const bot = new TeleBot({
