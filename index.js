@@ -30,7 +30,7 @@ const bot = new TeleBot({
     port:PORT
   }
 });
-
+bot.getWebhookInfo().then((res) => console.log("webhook info:", res));
 bot.on('text', async (msg) => {
   console.log('Got msg:', msg.text);
   switch(msg.text.toLowerCase()) {
