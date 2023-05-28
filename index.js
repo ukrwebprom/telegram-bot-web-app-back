@@ -76,3 +76,5 @@ bot.on('text', async (msg) => {
 });
 
 bot.start();
+
+bot.getWebhookInfo().then((res) => console.log(res));
