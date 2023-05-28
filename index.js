@@ -1,6 +1,7 @@
 /* require('dotenv').config(); */
 const express = require('express');
 const bodyParser = require('body-parser');
+var cors = require('cors')
 const PAGE_URL = 'https://pochtiennykh-bot.onrender.com';
 const BEHANCE = 'https://www.behance.net/ukrwebprom';
 const GIT = 'https://github.com/ukrwebprom';
@@ -8,6 +9,7 @@ const WEBHOOK = 'https://telebot-pochtiennykh.herokuapp.com/webhook';
 const {BOT_TOKEN, PORT} = process.env;
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/webhook', (req, res) => {
