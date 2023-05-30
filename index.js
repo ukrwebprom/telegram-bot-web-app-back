@@ -86,6 +86,12 @@ async function sendResponse(msg, id) {
     case 'цьом':
       await bot.sendMessage(id, 'Цьом, цьом.. во все места');
       break;
+    case 'коша':
+      await bot.sendMessage(id, 'Коша старшая или коша младшая?');
+      break;
+    case 'ровач':
+      await bot.sendMessage(id, 'Ну');
+      break;
     default:
       await bot.sendMessage(id, 'Hmmm...');
   }
