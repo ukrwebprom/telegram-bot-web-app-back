@@ -77,6 +77,18 @@ async function sendResponse(msg, id) {
         }
       });
       break;
+    case 'hello':
+      await bot.sendMessage(id,'Hi, nice to meet you 🤝 Please find my command list in menu');
+      break;
+    case 'hi':
+      await bot.sendMessage(id,'Hi, nice to meet you 🤝 Please find my command list in menu');
+      break;
+    case '/hello':
+      await bot.sendMessage(id,'Hi, nice to meet you 🤝 Please find my command list in menu');
+      break;
+    case '/hi':
+      await bot.sendMessage(id,'Hi, nice to meet you 🤝 Please find my command list in menu');
+      break;
     case 'я тебя люблю':
       await bot.sendMessage(id,'Я тебя тоже ❤️');
       break;
