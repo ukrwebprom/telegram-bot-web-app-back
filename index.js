@@ -57,7 +57,7 @@ async function sendResponse(msg, id) {
       break;
     case '/cv':
       await bot.sendMessage(id,'One moment...');
-      await bot.sendDocument(id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Front-end-developer.pdf',
+      await bot.sendDocument(id, 'https://pochtiennykh-bot.onrender.com/Yuriy-Pochtiennykh-Junior-Fullstack-developer.pdf',
       {
         caption: 'Here it is',
         parseMode: 'Markdown',
